@@ -1,10 +1,11 @@
-
+import java.util.Random;
 public class Arrays {
-
+	
 	public static void main(String[] args) {
 		
-		EjNombreEdadSexo();
-		
+		//EjNombreEdadSexo();
+		//MatrizRandom();
+		SumaMatrices();
 
 	}
 
@@ -19,5 +20,36 @@ public class Arrays {
 			System.out.println(nombres[0+i]+ "    " + edad[0+i] + "      "+ Sexo[0+i]);
 			
 		}
+	}
+	public static void MatrizRandom() {
+		int[][] numale = new int[20][10];
+		Random ale = new Random();
+		for(int i = 0; i < 10; i++) 
+		{
+		for	(int j = 0; j < 20; j++)
+		{
+			numale[j][i] = ale.nextInt(10, 100);
+			System.out.print(numale[j][i] + "|");
+		}
+		System.out.println("");
+		}	
+	}
+	
+	public static void SumaMatrices() {
+		int [][] num = new int [5][4];
+		Random Aleatorio = new Random();
+		int SumaFilas = 0;
+		for(int i = 0; i < 4; i++) {
+			for(int j = 0; j<5; j++) {
+				num [j][i] = Aleatorio.nextInt(0, 9);
+				System.out.print(num[j][i] + " | ");
+				SumaFilas = SumaFilas + num[j][i];
+			}
+			System.out.print(SumaFilas);
+			System.out.println("");
+			SumaFilas = 0;
+		}
+
+		
 	}
 }
