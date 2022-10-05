@@ -5,7 +5,7 @@ public class Arrays {
 		
 		//EjNombreEdadSexo();
 		//MatrizRandom();
-		SumaMatrices();
+		//SumaMatrices();
 
 	}
 
@@ -34,22 +34,31 @@ public class Arrays {
 		System.out.println("");
 		}	
 	}
-	
 	public static void SumaMatrices() {
 		int [][] num = new int [5][4];
 		Random Aleatorio = new Random();
-		int SumaFilas = 0;
+		int SumaFilas = 0, SumaColumnas = 0, SumaTotalF = 0, SumaTotalC = 0, SumaTOTAL = 0;
 		for(int i = 0; i < 4; i++) {
 			for(int j = 0; j<5; j++) {
 				num [j][i] = Aleatorio.nextInt(0, 9);
 				System.out.print(num[j][i] + " | ");
 				SumaFilas = SumaFilas + num[j][i];
+				SumaTotalF += num [j] [i];
 			}
+			
 			System.out.print(SumaFilas);
 			System.out.println("");
 			SumaFilas = 0;
 		}
-
-		
+		for(int i = 0; i < 5; i++) {
+			for(int j = 0; j<4; j++) {
+				SumaColumnas = SumaColumnas + num[i][j];
+				SumaTotalC += num [i][j];
+			}
+			System.out.print(SumaColumnas + "  ");
+			SumaColumnas = 0;
+		}
+		SumaTOTAL = SumaTotalC + SumaTotalF;
+		System.out.println(SumaTOTAL);
 	}
 }
